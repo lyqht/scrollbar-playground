@@ -1,0 +1,110 @@
+#fake-window::-webkit-scrollbar {
+    width: var(--scrollbar-height, "20px");
+    height: var(--scrollbar-width, "20px");
+}
+
+#fake-window::-webkit-scrollbar-thumb {
+    background: var(--scrollbar-thumb-color, #3B82F6);
+    border: 3px solid var(--scrollbar-border-color, rgb(255, 255, 255));
+    border-radius: var(--scrollbar-border-radius, 4px);
+}
+
+#fake-window::-webkit-scrollbar-track {
+    background: var(--scrollbar-track-color, #A1A1AA);
+}
+
+#fake-window::-webkit-scrollbar-button {
+    background: var(--scrollbar-button-color, #3F3F46);
+    border: 3px solid var(--scrollbar-border-color, rgb(255, 255, 255));
+    border-radius: var(--scrollbar-border-radius, 4px);
+}
+
+#fake-window::-webkit-scrollbar-corner {
+    background: var(--scrollbar-corner-color, #FFFFFF);
+    border: 3px solid var(--scrollbar-border-color, rgb(255, 255, 255));
+    border-radius: var(--scrollbar-border-radius, 4px);
+}
+
+
+/* styles not related to scrollbar */
+
+h1 {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 20px;
+}
+
+h1::after,
+h1::before {
+    content: "";
+    border: 1px solid white;
+    align-self: center;
+}
+
+html {
+    font-family: 'PT Mono', monospace;
+    background-color: #000000;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='250' height='30' viewBox='0 0 1000 120'%3E%3Cg fill='none' stroke='%23222' stroke-width='10' %3E%3Cpath d='M-500 75c0 0 125-30 250-30S0 75 0 75s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500 45c0 0 125-30 250-30S0 45 0 45s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500 105c0 0 125-30 250-30S0 105 0 105s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500 15c0 0 125-30 250-30S0 15 0 15s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500-15c0 0 125-30 250-30S0-15 0-15s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500 135c0 0 125-30 250-30S0 135 0 135s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+body {
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+    padding: 24px;
+    color: white;
+}
+
+#fake-window {
+    margin: auto;
+    width: 300px;
+    height: 400px;
+    resize: both;
+    overflow: auto;
+    display: grid;
+    place-items: center;
+    border-radius: 6px;
+    border: 1px solid white;
+    color: black;
+    background: rgba(255, 255, 255, 0.8);
+}
+
+.inner-content {
+    width: 150%;
+    transform: translate(20%);
+}
+
+#form {
+    width: 50%;
+    min-width: 30%;
+    margin: 24px;
+}
+
+#size-inputs>div {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 8px;
+    margin: 8px;
+}
+
+button#color-picker {
+    width: 40px;
+    height: 40px;
+}
+
+input {
+    width: 60px;
+    font-size: 18px;
+}
+
+#color-inputs {
+    padding: 16px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+}
+
+#color-inputs>div {
+    display: grid;
+    place-items: center;
+}
