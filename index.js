@@ -2,6 +2,7 @@ const scrollbarDiv = document.getElementById("fake-window")
 const heightInput = document.getElementsByName("scrollbar-height")[0]
 const widthInput = document.getElementsByName("scrollbar-width")[0]
 const borderRadiusInput = document.getElementsByName("scrollbar-border-radius")[0]
+const exportCSSButton = document.getElementById('export-css')
 
 const bindColorPicker = (el, property, defaultColor) => {
     const pickr = Pickr.create({
@@ -96,3 +97,11 @@ const sizePropertyArray = [
 ] 
 
 sizePropertyArray.forEach(({ el, property }) => setSizeFieldOnChange(el, property))
+
+exportCSSButton.onclick = () => {
+    let exportedStyle = ""
+    const cssRules = Object.values(document.styleSheets[1].cssRules)
+    const scrollbarRules = cssRules.filter(rule => rule.cssText.includes('::-webkit-scrollbar'))
+    const exportedStyles = scrollbarRules.map(rule => exportedStyle += (rule.cssText));
+    navigator.clipboard.writeText(exportedStyles)
+}

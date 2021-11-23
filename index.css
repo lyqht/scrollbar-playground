@@ -101,10 +101,21 @@ input {
     padding: 16px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
 }
 
 #color-inputs>div {
     display: grid;
     place-items: center;
+    margin-block-end: 16px;
+}
+
+#export-button-container {
+    display: grid;
+    place-items: center;
+    margin: 16px;
+}
+
+#export-button-container>button {
+    padding: 12px;
+    border-radius: 8px;
 }
