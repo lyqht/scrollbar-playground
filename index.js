@@ -25,6 +25,7 @@ const bindColorPicker = (el, property, defaultColor) => {
             'rgba(255, 235, 59, 0.95)',
             'rgba(255, 193, 7, 1)'
         ],
+        comparison: false,
         components: {
             preview: true,
             opacity: true,
