@@ -99,11 +99,9 @@ const sizePropertyArray = [
 sizePropertyArray.forEach(({ el, property }) => setSizeFieldOnChange(el, property))
 
 exportCSSButton.onclick = () => {
-    let exportedStyle = ""
+    let exportedStyle = `::root { ${scrollbarDiv.style.cssText} } `
     const cssRules = Object.values(document.styleSheets[1].cssRules)
-    console.log({cssRules})
     const scrollbarRules = cssRules.filter(rule => rule.cssText.includes('::-webkit-scrollbar'))
-    console.log({scrollbarRules})
     scrollbarRules.forEach(rule => {
         exportedStyle += rule.cssText
     });
