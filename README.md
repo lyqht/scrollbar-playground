@@ -19,7 +19,7 @@ When you click it, you can get the exported css in your clipboard which you can 
 Remember to format the code to get a prettified version for readibility. 
 
 ```css
-::root {
+body {
     --scrollbar-width: 16px;
     --scrollbar-height: 16px;
     --scrollbar-border-radius: 20px;
@@ -30,28 +30,28 @@ Remember to format the code to get a prettified version for readibility.
     --scrollbar-border-color: #5C5C5C;
 }
 
-#fake-window::-webkit-scrollbar {
+body::-webkit-scrollbar {
     width: var(--scrollbar-height, "20px");
     height: var(--scrollbar-width, "20px");
 }
 
-#fake-window::-webkit-scrollbar-thumb {
+body::-webkit-scrollbar-thumb {
     background: var(--scrollbar-thumb-color, #3B82F6);
     border: 3px solid var(--scrollbar-border-color, rgb(255, 255, 255));
     border-radius: var(--scrollbar-border-radius, 4px);
 }
 
-#fake-window::-webkit-scrollbar-track {
+body::-webkit-scrollbar-track {
     background: var(--scrollbar-track-color, #A1A1AA);
 }
 
-#fake-window::-webkit-scrollbar-button {
+body::-webkit-scrollbar-button {
     background: var(--scrollbar-button-color, #3F3F46);
     border: 3px solid var(--scrollbar-border-color, rgb(255, 255, 255));
     border-radius: var(--scrollbar-border-radius, 4px);
 }
 
-#fake-window::-webkit-scrollbar-corner {
+body::-webkit-scrollbar-corner {
     background: var(--scrollbar-corner-color, #FFFFFF);
     border: 3px solid var(--scrollbar-border-color, rgb(255, 255, 255));
     border-radius: var(--scrollbar-border-radius, 4px);
