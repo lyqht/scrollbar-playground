@@ -1,7 +1,8 @@
 const scrollbarDiv = document.getElementById("fake-window")
-const heightInput = document.getElementsByName("scrollbar-height")[0]
-const widthInput = document.getElementsByName("scrollbar-width")[0]
-const borderRadiusInput = document.getElementsByName("scrollbar-border-radius")[0]
+const heightInput = document.getElementById("scrollbar-height")
+const widthInput = document.getElementById("scrollbar-width")
+const borderRadiusInput = document.getElementById("scrollbar-border-radius")
+const borderToggle = document.getElementById("scrollbar-border-toggle")
 const exportCSSButton = document.getElementById('export-css')
 
 const bindColorPicker = (el, property, defaultColor) => {
@@ -98,6 +99,15 @@ const sizePropertyArray = [
 ] 
 
 sizePropertyArray.forEach(({ el, property }) => setSizeFieldOnChange(el, property))
+
+borderToggle.onchange = () => {
+    if (borderToggle.checked === false) {
+        scrollbarDiv.style.setProperty("--scrollbar-border-thickness", "0px")
+    } else {
+        scrollbarDiv.style.setProperty("--scrollbar-border-thickness", "3px")
+    }
+}
+
 
 exportCSSButton.onclick = () => {
     let exportedStyle = `::root { ${scrollbarDiv.style.cssText} } `
