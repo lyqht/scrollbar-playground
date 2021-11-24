@@ -110,11 +110,13 @@ borderToggle.onchange = () => {
 
 
 exportCSSButton.onclick = () => {
-    let exportedStyle = `::root { ${scrollbarDiv.style.cssText} } `
+    const defaultElementForStyle = "body" // modify this for scrollbar styles to be applied to another element
+    let exportedStyle = `${defaultElementForStyle} { ${scrollbarDiv.style.cssText} } `
     const cssRules = Object.values(document.styleSheets[1].cssRules)
     const scrollbarRules = cssRules.filter(rule => rule.cssText.includes('::-webkit-scrollbar'))
     scrollbarRules.forEach(rule => {
-        exportedStyle += rule.cssText
+        const modifiedRule = rule.cssText.replace("#fake-window", defaultElementForStyle)
+        exportedStyle += modifiedRule
     });
     navigator.clipboard.writeText(exportedStyle)
 }
