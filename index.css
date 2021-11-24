@@ -55,6 +55,14 @@ body {
     color: white;
 }
 
+#github-logo {
+    position: absolute;
+    right: 5vw;
+    border-radius: 50%;
+    box-shadow: inset 4px 4px 4px lightgrey;
+    background: white url("github-outline.svg");
+}
+
 #fake-window {
     margin: auto;
     width: 300px;
