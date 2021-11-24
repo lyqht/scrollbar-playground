@@ -3,7 +3,10 @@ const heightInput = document.getElementById("scrollbar-height")
 const widthInput = document.getElementById("scrollbar-width")
 const borderRadiusInput = document.getElementById("scrollbar-border-radius")
 const borderToggle = document.getElementById("scrollbar-border-toggle")
+const buttonToggle = document.getElementById("scrollbar-button-toggle")
 const exportCSSButton = document.getElementById('export-css')
+
+let defaultElementForStyling = "body" // modify this for scrollbar styles to be applied to another element
 
 const bindColorPicker = (el, property, defaultColor) => {
     const pickr = Pickr.create({
@@ -96,7 +99,7 @@ const sizePropertyArray = [
         el: borderRadiusInput,
         property: "--scrollbar-border-radius"
     }
-] 
+]
 
 sizePropertyArray.forEach(({ el, property }) => setSizeFieldOnChange(el, property))
 
@@ -108,14 +111,32 @@ borderToggle.onchange = () => {
     }
 }
 
+buttonToggle.onchange = () => {
+    if (buttonToggle.checked === false) {
+        const cssRules = Object.values(document.styleSheets[1].cssRules)
+        const scrollbarRules = cssRules.filter(rule => rule.cssText.includes('::-webkit-scrollbar-button'))
+
+        if (scrollbarRules.length == 1) {
+            const foundRule = scrollbarRules[0]
+            const indexOfScrollbarButtonRule = cssRules.indexOf(foundRule)
+            document.styleSheets[1].deleteRule(indexOfScrollbarButtonRule)
+        }
+    } else {
+        document.styleSheets[1].insertRule(`#fake-window::-webkit-scrollbar-button {
+            background: var(--scrollbar-button-color, #3F3F46);
+            border: var(--scrollbar-border-thickness, 3px) solid var(--scrollbar-border-color, rgb(255, 255, 255));
+            border-radius: var(--scrollbar-border-radius, 4px);}`)
+    }
+}
+
 
 exportCSSButton.onclick = () => {
-    const defaultElementForStyle = "body" // modify this for scrollbar styles to be applied to another element
-    let exportedStyle = `${defaultElementForStyle} { ${scrollbarDiv.style.cssText} } `
+
+    let exportedStyle = `${defaultElementForStyling} { ${scrollbarDiv.style.cssText} } `
     const cssRules = Object.values(document.styleSheets[1].cssRules)
     const scrollbarRules = cssRules.filter(rule => rule.cssText.includes('::-webkit-scrollbar'))
     scrollbarRules.forEach(rule => {
-        const modifiedRule = rule.cssText.replace("#fake-window", defaultElementForStyle)
+        const modifiedRule = rule.cssText.replace("#fake-window", defaultElementForStyling)
         exportedStyle += modifiedRule
     });
     navigator.clipboard.writeText(exportedStyle)

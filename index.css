@@ -89,7 +89,8 @@ body {
 }
 
 #size-inputs>div,
-#toggles>div {
+#toggles>div,
+.grid-two-columns {
     display: grid;
     grid-template-columns: 1fr 1fr;
     padding: 8px;

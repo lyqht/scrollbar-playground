@@ -95,28 +95,39 @@
     </div>
     <div id='form'>
         <h1>Scrollbar Playground</h1>
-        <div id='size-inputs'>
-            <div>
-                <label for="scrollbar-width">Scrollbar Width (px)</label>
-                <input id="scrollbar-width" name="scrollbar-width" type="number" min="0" step="10" value="20" />
+        <div class="grid-two-columns">
+            <div id='size-inputs'>
+                <h2>Sizes</h2>
+                <div>
+                    <label for="scrollbar-width">Scrollbar Width (px)</label>
+                    <input id="scrollbar-width" name="scrollbar-width" type="number" min="0" step="10" value="20" />
+                </div>
+                <div>
+                    <label for="scrollbar-height">Scrollbar Height (px)</label>
+                    <input id="scrollbar-height" name="scrollbar-height" type="number" min="0" step="10" value="20" />
+                </div>
+                <div>
+                    <label for="scrollbar-border-radius">Border Radius (px)</label>
+                    <input id="scrollbar-border-radius" name="scrollbar-border-radius" type="number" min="0" step="2"
+                        value="8" />
+                </div>
             </div>
-            <div>
-                <label for="scrollbar-height">Scrollbar Height (px)</label>
-                <input id="scrollbar-height" name="scrollbar-height" type="number" min="0" step="10" value="20" />
-            </div>
-            <div>
-                <label for="scrollbar-border-radius">Border Radius (px)</label>
-                <input id="scrollbar-border-radius" name="scrollbar-border-radius" type="number" min="0" step="2"
-                    value="8" />
-            </div>
-        </div>
-        <div id='toggles'>
-            <div>
-                <label for="scrollbar-border-toggle">Show Border Radius</label>
-                <label class="switch" for="scrollbar-border-toggle">
-                    <input id="scrollbar-border-toggle" name="scrollbar-border-toggle" type="checkbox" checked=true>
-                    <span class="slider"></span>
-                </label>
+            <div id='toggles'>
+                <h2>Show Property</h2>
+                <div>
+                    <label for="scrollbar-border-toggle">Border Radius</label>
+                    <label class="switch" for="scrollbar-border-toggle">
+                        <input id="scrollbar-border-toggle" name="scrollbar-border-toggle" type="checkbox" checked=true>
+                        <span class="slider"></span>
+                    </label>
+                </div>
+                <div>
+                    <label for="scrollbar-button-toggle">Scrollbar Buttons</label>
+                    <label class="switch" for="scrollbar-button-toggle">
+                        <input id="scrollbar-button-toggle" name="scrollbar-button-toggle" type="checkbox" checked=true>
+                        <span class="slider"></span>
+                    </label>
+                </div>
             </div>
         </div>
         <h2>Colors</h2>
