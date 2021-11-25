@@ -4,6 +4,9 @@ const widthInput = document.getElementById("scrollbar-width")
 const borderRadiusInput = document.getElementById("scrollbar-border-radius")
 const borderToggle = document.getElementById("scrollbar-border-toggle")
 const buttonToggle = document.getElementById("scrollbar-button-toggle")
+const numButtonConfigContainer = document.getElementById("num-buttons-shown-container")
+const singleButtonShownCheckbox = document.getElementById('button-show-single')
+const doubleButtonShownCheckbox = document.getElementById('button-show-double')
 const exportCSSButton = document.getElementById('export-css')
 
 let defaultElementForStyling = "body" // modify this for scrollbar styles to be applied to another element
@@ -113,20 +116,27 @@ borderToggle.onchange = () => {
 
 buttonToggle.onchange = () => {
     if (buttonToggle.checked === false) {
+        numButtonConfigContainer.style.visibility = 'hidden';
         const cssRules = Object.values(document.styleSheets[1].cssRules)
         const scrollbarRules = cssRules.filter(rule => rule.cssText.includes('::-webkit-scrollbar-button'))
-
-        if (scrollbarRules.length == 1) {
-            const foundRule = scrollbarRules[0]
-            const indexOfScrollbarButtonRule = cssRules.indexOf(foundRule)
-            document.styleSheets[1].deleteRule(indexOfScrollbarButtonRule)
-        }
+        const foundRule = scrollbarRules[0]
+        const indexOfScrollbarButtonRule = cssRules.indexOf(foundRule)
+        document.styleSheets[1].deleteRule(indexOfScrollbarButtonRule)
     } else {
+        numButtonConfigContainer.style.visibility = 'visible';
         document.styleSheets[1].insertRule(`#fake-window::-webkit-scrollbar-button {
             background: var(--scrollbar-button-color, #3F3F46);
             border: var(--scrollbar-border-thickness, 3px) solid var(--scrollbar-border-color, rgb(255, 255, 255));
             border-radius: var(--scrollbar-border-radius, 4px);}`)
     }
+}
+
+singleButtonShownCheckbox.onchange = () => {
+    scrollbarDiv.style.setProperty("--show-double-buttons", "none")
+}
+
+doubleButtonShownCheckbox.onchange = () => {
+    scrollbarDiv.style.setProperty("--show-double-buttons", "block")
 }
 
 

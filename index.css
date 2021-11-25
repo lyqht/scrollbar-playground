@@ -25,6 +25,13 @@
     border-radius: var(--scrollbar-border-radius, 4px);
 }
 
+#fake-window::-webkit-scrollbar-button:vertical:start:increment,
+#fake-window::-webkit-scrollbar-button:vertical:end:decrement,
+#fake-window::-webkit-scrollbar-button:horizontal:start:increment,
+#fake-window::-webkit-scrollbar-button:horizontal:end:decrement {
+    display: var(--show-double-buttons, none);
+}
+
 
 /* styles not related to scrollbar */
 
@@ -95,10 +102,14 @@ body,
 }
 
 #size-inputs>div,
-#toggles>div,
 .grid-two-columns {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    padding: 4px;
+    margin: 4px;
+}
+
+#num-buttons-shown-container {
     padding: 4px;
     margin: 4px;
 }
@@ -135,6 +146,8 @@ button#color-picker {
     padding: 12px;
     border-radius: 8px;
 }
+
+/* toggle styles */
 
 .switch {
     position: relative;
@@ -191,4 +204,36 @@ input:checked+.slider:before {
     -webkit-transform: translateX(26px);
     -ms-transform: translateX(26px);
     transform: translateX(26px);
+}
+
+/* radio button styles */
+
+.radio-button-container {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 4px;
+}
+
+.num-buttons-options-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+input[type="radio"] {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    border: 4px solid #3B82F6;
+    background-color: #3B82F6;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+input[type="radio"]:focus {
+    outline: none;
+}
+
+input[type="radio"]:checked {
+    background-color: #ffffff;
 }

@@ -114,19 +114,34 @@
             </div>
             <div id='toggles'>
                 <h2>Toggles</h2>
-                <div>
+                <div class="grid-two-columns">
                     <label for="scrollbar-border-toggle">Show Border</label>
                     <label class="switch" for="scrollbar-border-toggle">
                         <input id="scrollbar-border-toggle" name="scrollbar-border-toggle" type="checkbox" checked=true>
                         <span class="slider"></span>
                     </label>
                 </div>
-                <div>
+                <div class="grid-two-columns">
                     <label for="scrollbar-button-toggle">Show Scrollbar Buttons</label>
                     <label class="switch" for="scrollbar-button-toggle">
                         <input id="scrollbar-button-toggle" name="scrollbar-button-toggle" type="checkbox" checked=true>
                         <span class="slider"></span>
                     </label>
+                </div>
+                <div id="num-buttons-shown-container">
+                    <label for="scrollbar-num-buttons-shown">No. of buttons</label>
+                    <div class="num-buttons-options-container">
+                        <div class="radio-button-container">
+                            <input type="radio" title="button-show-single" id="button-show-single"
+                                name="num-buttons-shown" value=1 checked=true />
+                            <label>1</label>
+                        </div>
+                        <div class="radio-button-container">
+                            <input type="radio" title="button-show-double" id="button-show-double"
+                                name="num-buttons-shown" value=2 />
+                            <label>2</label>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
