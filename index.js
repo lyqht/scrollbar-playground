@@ -10,6 +10,17 @@ const doubleButtonShownCheckbox = document.getElementById('button-show-double')
 const exportCSSButton = document.getElementById('export-css')
 
 let defaultElementForStyling = "body" // modify this for scrollbar styles to be applied to another element
+let defaultCSSProperties = `
+    --scrollbar-height: 20px;
+    --scrollbar-widtht: 20px;
+    --scrollbar-border-radius: 4px;
+    --scrollbar-thumb-color: #3B82F6;
+    --scrollbar-button-color: #3F3F46;
+    --scrollbar-track-color: #A1A1AA;
+    --scrollbar-corner-color: #FFFFFF;
+    --scrollbar-border-thickness: 3px;
+    --scrollbar-border-color: #FFFFFF;
+`
 
 const bindColorPicker = (el, property, defaultColor) => {
     const pickr = Pickr.create({
@@ -141,8 +152,8 @@ doubleButtonShownCheckbox.onchange = () => {
 
 
 exportCSSButton.onclick = () => {
-
-    let exportedStyle = `${defaultElementForStyling} { ${scrollbarDiv.style.cssText} } `
+    let customProperties = scrollbarDiv.style.cssText.length > 0 ? scrollbarDiv.style.cssText : defaultCSSProperties
+    let exportedStyle = `${defaultElementForStyling} { ${customProperties} } `
     const cssRules = Object.values(document.styleSheets[1].cssRules)
     const scrollbarRules = cssRules.filter(rule => rule.cssText.includes('::-webkit-scrollbar'))
     scrollbarRules.forEach(rule => {

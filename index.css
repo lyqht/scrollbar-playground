@@ -25,6 +25,7 @@
     border-radius: var(--scrollbar-border-radius, 4px);
 }
 
+
 #fake-window::-webkit-scrollbar-button:vertical:start:increment,
 #fake-window::-webkit-scrollbar-button:vertical:end:decrement,
 #fake-window::-webkit-scrollbar-button:horizontal:start:increment,
