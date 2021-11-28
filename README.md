@@ -2,7 +2,7 @@
 
 This project is created for you to learn about different parts of the scrollbar that you can change to alter its appearance. Go to the [website](https://lyqht.github.io/scrollbar-playground/) and play with it 🧡
 
-I have written an article [here](https://esteetey.dev/make-your-website-stand-out-with-a-custom-scrollbar) for a further explanation on the CSS rules for styling the scrollbar. 
+An article is written [here](https://esteetey.dev/make-your-website-stand-out-with-a-custom-scrollbar) for a further explanation on the CSS rules for styling the scrollbar. 
 
 
 ## Features
