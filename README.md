@@ -4,6 +4,8 @@ This project is created for you to learn about different parts of the scrollbar 
 
 An article is written [here](https://esteetey.dev/make-your-website-stand-out-with-a-custom-scrollbar) for a further explanation on the CSS rules for styling the scrollbar. 
 
+<img width="1516" alt="Screenshot 2021-12-29 at 9 40 00 PM" src="https://user-images.githubusercontent.com/35736525/147668152-22987733-83e8-4464-a4dd-ddfbff9c01ce.png">
+
 
 ## Features
 
