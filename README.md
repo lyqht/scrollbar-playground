@@ -2,22 +2,21 @@
 
 This project is created for you to learn about different parts of the scrollbar that you can change to alter its appearance. Go to the [website](https://lyqht.github.io/scrollbar-playground/) and play with it 🧡
 
-An article is written [here](https://esteetey.dev/make-your-website-stand-out-with-a-custom-scrollbar) for a further explanation on the CSS rules used for styling the scrollbar. 
-
 <img width="1516" alt="Screenshot 2021-12-29 at 9 40 00 PM" src="https://user-images.githubusercontent.com/35736525/147668152-22987733-83e8-4464-a4dd-ddfbff9c01ce.png">
 
 
 ## Features
 
-✨ **Controls for size and colors**
+### ✨ Create your custom scrollbar
 
-The sizes and colors here directly change the properties of the pseudo-elements for styling the scrollbar.
+This scrollbar playground offers you multiple configuration settings such as sizes and colors of the various components of the scrollbar. What you configure directly changes the properties of the pseudo-elements for styling the scrollbar.
 
-✨ **Export css button**
+An article is written here for a further explanation on [the CSS pseudo-elements used for styling the scrollbar](https://esteetey.dev/make-your-website-stand-out-with-a-custom-scrollbar). 
+### ✨ Export css button
 
-When you click it, you can get the exported css in your clipboard which you can paste (Ctrl+V) into your stylesheet. Now you have your own custom scrollbar!
+When you click it, you can get the exported css in your clipboard which you can paste (Ctrl+V) into your project. Feel free to try it out at an empty codepen with a very tall empty div. Now you have your own custom scrollbar!
 
-:warning: Remember to format the code to get a prettified version for readibility. 
+> :warning: Remember to format the code to get a prettified version for readibility. This export button does not prettify the code by default.
 
 ## Example
 
