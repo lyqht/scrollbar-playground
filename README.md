@@ -2,7 +2,7 @@
 
 This project is created for you to learn about different parts of the scrollbar that you can change to alter its appearance. Go to the [website](https://lyqht.github.io/scrollbar-playground/) and play with it 🧡
 
-An article is written [here](https://esteetey.dev/make-your-website-stand-out-with-a-custom-scrollbar) for a further explanation on the CSS rules for styling the scrollbar. 
+An article is written [here](https://esteetey.dev/make-your-website-stand-out-with-a-custom-scrollbar) for a further explanation on the CSS rules used for styling the scrollbar. 
 
 <img width="1516" alt="Screenshot 2021-12-29 at 9 40 00 PM" src="https://user-images.githubusercontent.com/35736525/147668152-22987733-83e8-4464-a4dd-ddfbff9c01ce.png">
 
@@ -11,15 +11,19 @@ An article is written [here](https://esteetey.dev/make-your-website-stand-out-wi
 
 ✨ **Controls for size and colors**
 
-The sizes and colors here directly change the properties of the pseudo-elements for styling the scrollbar!
-
-![](screenshots/v1.0.0-scrollbar-playground-demo.gif)
+The sizes and colors here directly change the properties of the pseudo-elements for styling the scrollbar.
 
 ✨ **Export css button**
 
-When you click it, you can get the exported css in your clipboard which you can paste (Ctrl+V) into your stylesheet. Now you have your own custom scrollbar! 
+When you click it, you can get the exported css in your clipboard which you can paste (Ctrl+V) into your stylesheet. Now you have your own custom scrollbar!
 
-Remember to format the code to get a prettified version for readibility. 
+:warning: Remember to format the code to get a prettified version for readibility. 
+
+## Example
+
+![](screenshots/v1.0.1%20scrollbar%20playground.png)
+
+Your exported styles after prettifying
 
 ```css
 body {
@@ -60,7 +64,3 @@ body::-webkit-scrollbar-corner {
     border-radius: var(--scrollbar-border-radius, 4px);
 }
 ```
-
-![](screenshots/v1.0.1%20scrollbar%20playground.png)
-
-
