@@ -12,7 +12,7 @@ const exportCSSButton = document.getElementById('export-css')
 let defaultElementForStyling = "body" // modify this for scrollbar styles to be applied to another element
 let defaultCSSProperties = `
     --scrollbar-height: 20px;
-    --scrollbar-widtht: 20px;
+    --scrollbar-width: 20px;
     --scrollbar-border-radius: 4px;
     --scrollbar-thumb-color: #3B82F6;
     --scrollbar-button-color: #3F3F46;

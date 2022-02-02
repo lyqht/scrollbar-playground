@@ -1,6 +1,6 @@
 #fake-window::-webkit-scrollbar {
-    width: var(--scrollbar-height, 20px);
-    height: var(--scrollbar-width, 20px);
+    width: var(--scrollbar-width, 20px);
+    height: var(--scrollbar-height, 20px);
 }
 
 #fake-window::-webkit-scrollbar-thumb {
