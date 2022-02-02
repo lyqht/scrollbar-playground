@@ -42,7 +42,6 @@ h1 {
     gap: 20px;
 }
 
-h1::after,
 h1::before {
     content: "";
     border: 1px solid white;
@@ -70,12 +69,8 @@ body,
 }
 
 #github-logo {
-    position: absolute;
-    right: 5vw;
-    bottom: 5vh;
+    background: white;
     border-radius: 50%;
-    box-shadow: inset 4px 4px 4px lightgrey;
-    background: white url("github-outline.svg");
 }
 
 #fake-window {
@@ -97,9 +92,22 @@ body,
     transform: translate(20%);
 }
 
+body {
+    height: 100vh;
+}
+
 #form {
+    display: flex;
+    justify-items: center;
+    flex-direction: column;
+}
+
+#form-container {
     width: 50%;
     min-width: 30%;
+    display: flex;
+    align-items: center;
+    justify-items: center;
 }
 
 #size-inputs>div,

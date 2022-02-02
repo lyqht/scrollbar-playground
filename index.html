@@ -95,89 +95,95 @@
 
         </p>
     </div>
-    <div id='form'>
-        <h1>Scrollbar Playground</h1>
-        <div class="grid-two-columns">
-            <div id='size-inputs'>
-                <h2>Sizes</h2>
-                <div>
-                    <label for="scrollbar-width">Scrollbar Width (px)</label>
-                    <input id="scrollbar-width" name="scrollbar-width" type="number" min="0" step="10" value="20" />
+    <div id='form-container'>
+        <div id='form'>
+            <span>
+                <h1>Scrollbar Playground<a href="https://github.com/lyqht/scrollbar-playground"><img id='github-logo'
+                            style="height: 40px;" alt="github" src="github-outline.svg" /></a></h1>
+            </span>
+            <div class="grid-two-columns">
+                <div id='size-inputs'>
+                    <h2>Sizes</h2>
+                    <div>
+                        <label for="scrollbar-width">Scrollbar Width (px)</label>
+                        <input id="scrollbar-width" name="scrollbar-width" type="number" min="0" step="10" value="20" />
+                    </div>
+                    <div>
+                        <label for="scrollbar-height">Scrollbar Height (px)</label>
+                        <input id="scrollbar-height" name="scrollbar-height" type="number" min="0" step="10"
+                            value="20" />
+                    </div>
+                    <div>
+                        <label for="scrollbar-border-radius">Border Radius (px)</label>
+                        <input id="scrollbar-border-radius" name="scrollbar-border-radius" type="number" min="0"
+                            step="2" value="8" />
+                    </div>
                 </div>
-                <div>
-                    <label for="scrollbar-height">Scrollbar Height (px)</label>
-                    <input id="scrollbar-height" name="scrollbar-height" type="number" min="0" step="10" value="20" />
-                </div>
-                <div>
-                    <label for="scrollbar-border-radius">Border Radius (px)</label>
-                    <input id="scrollbar-border-radius" name="scrollbar-border-radius" type="number" min="0" step="2"
-                        value="8" />
-                </div>
-            </div>
-            <div id='toggles'>
-                <h2>Toggles</h2>
-                <div class="grid-two-columns">
-                    <label for="scrollbar-border-toggle">Show Border</label>
-                    <label class="switch" for="scrollbar-border-toggle">
-                        <input id="scrollbar-border-toggle" name="scrollbar-border-toggle" type="checkbox" checked=true>
-                        <span class="slider"></span>
-                    </label>
-                </div>
-                <div class="grid-two-columns">
-                    <label for="scrollbar-button-toggle">Show Scrollbar Buttons</label>
-                    <label class="switch" for="scrollbar-button-toggle">
-                        <input id="scrollbar-button-toggle" name="scrollbar-button-toggle" type="checkbox" checked=true>
-                        <span class="slider"></span>
-                    </label>
-                </div>
-                <div id="num-buttons-shown-container">
-                    <label for="scrollbar-num-buttons-shown">No. of buttons</label>
-                    <div class="num-buttons-options-container">
-                        <div class="radio-button-container">
-                            <input type="radio" title="button-show-single" id="button-show-single"
-                                name="num-buttons-shown" value=1 checked=true />
-                            <label>1</label>
-                        </div>
-                        <div class="radio-button-container">
-                            <input type="radio" title="button-show-double" id="button-show-double"
-                                name="num-buttons-shown" value=2 />
-                            <label>2</label>
+                <div id='toggles'>
+                    <h2>Toggles</h2>
+                    <div class="grid-two-columns">
+                        <label for="scrollbar-border-toggle">Show Border</label>
+                        <label class="switch" for="scrollbar-border-toggle">
+                            <input id="scrollbar-border-toggle" name="scrollbar-border-toggle" type="checkbox"
+                                checked=true>
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                    <div class="grid-two-columns">
+                        <label for="scrollbar-button-toggle">Show Scrollbar Buttons</label>
+                        <label class="switch" for="scrollbar-button-toggle">
+                            <input id="scrollbar-button-toggle" name="scrollbar-button-toggle" type="checkbox"
+                                checked=true>
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                    <div id="num-buttons-shown-container">
+                        <label for="scrollbar-num-buttons-shown">No. of buttons</label>
+                        <div class="num-buttons-options-container">
+                            <div class="radio-button-container">
+                                <input type="radio" title="button-show-single" id="button-show-single"
+                                    name="num-buttons-shown" value=1 checked=true />
+                                <label>1</label>
+                            </div>
+                            <div class="radio-button-container">
+                                <input type="radio" title="button-show-double" id="button-show-double"
+                                    name="num-buttons-shown" value=2 />
+                                <label>2</label>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <h2>Colors</h2>
-        <div id="color-inputs">
-            <div>
-                <label for="scrollbar-thumb-color">Thumb</label>
-                <button id="thumb-color-picker" title="thumb-color-picker" />
+            <h2>Colors</h2>
+            <div id="color-inputs">
+                <div>
+                    <label for="scrollbar-thumb-color">Thumb</label>
+                    <button id="thumb-color-picker" title="thumb-color-picker" />
+                </div>
+                <div>
+                    <label for="scrollbar-track-color">Track</label>
+                    <button id="track-color-picker" title="track-color-picker" />
+                </div>
+                <div>
+                    <label for="scrollbar-button-color">Button</label>
+                    <button id="button-color-picker" title="button-color-picker" />
+                </div>
+                <div>
+                    <label for="scrollbar-corner-color">Corner</label>
+                    <button id="corner-color-picker" title="corner-color-picker" />
+                </div>
+                <div>
+                    <label for="scrollbar-border-color">Border</label>
+                    <button id="border-color-picker" title="border-color-picker" />
+                </div>
             </div>
-            <div>
-                <label for="scrollbar-track-color">Track</label>
-                <button id="track-color-picker" title="track-color-picker" />
+            <hr />
+            <div id="export-button-container">
+                <button id='export-css'>Export CSS</button>
             </div>
-            <div>
-                <label for="scrollbar-button-color">Button</label>
-                <button id="button-color-picker" title="button-color-picker" />
-            </div>
-            <div>
-                <label for="scrollbar-corner-color">Corner</label>
-                <button id="corner-color-picker" title="corner-color-picker" />
-            </div>
-            <div>
-                <label for="scrollbar-border-color">Border</label>
-                <button id="border-color-picker" title="border-color-picker" />
-            </div>
-        </div>
-        <hr />
-        <div id="export-button-container">
-            <button id='export-css'>Export CSS</button>
         </div>
     </div>
 </body>
-<a href="https://github.com/lyqht/scrollbar-playground"><img id='github-logo' style="height: 40px;" alt="github"
-        src="github-outline.svg" /></a>
 <script src="index.js"></script>
 
 </html>
