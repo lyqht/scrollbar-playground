@@ -150,15 +150,31 @@ doubleButtonShownCheckbox.onchange = () => {
     scrollbarDiv.style.setProperty("--show-double-buttons", "block")
 }
 
+const validateCSS = async (cssStylesInText) => {
+    const encodedStyles = encodeURI(cssStylesInText)
+    const cssValidationResponse = await fetch(`http://jigsaw.w3.org/css-validator/validator?profile=css3&text=${encodedStyles}`);
+    const cssValidationResponseText = await cssValidationResponse.text();
+    const parser = new DOMParser();
+    const validationDoc = parser.parseFromString(cssValidationResponseText, "text/html")
+    const validationErrors = validationDoc.getElementsByClassName("error");
+    return validationErrors;
+}
 
-exportCSSButton.onclick = () => {
+exportCSSButton.onclick = async () => {
     let customProperties = scrollbarDiv.style.cssText.length > 0 ? scrollbarDiv.style.cssText : defaultCSSProperties
     let exportedStyle = `${defaultElementForStyling} { ${customProperties} } `
-    const cssRules = Object.values(document.styleSheets[1].cssRules)
+    const cssRules = Object.values(document.styleSheets[1].cssRules) // Google font styles were loaded first before index.css
     const scrollbarRules = cssRules.filter(rule => rule.cssText.includes('::-webkit-scrollbar'))
     scrollbarRules.forEach(rule => {
         const modifiedRule = rule.cssText.replace("#fake-window", defaultElementForStyling)
         exportedStyle += modifiedRule
     });
-    navigator.clipboard.writeText(exportedStyle)
+
+    const cssValidationErrorsCollection = await validateCSS(exportedStyle)
+    if (Object.keys(cssValidationErrorsCollection).length === 0) {
+        console.log("No CSS validation errors found by W3C")
+        navigator.clipboard.writeText(exportedStyle)
+    } else {
+        console.log({cssValidationErrorsCollection})
+    }
 }
