@@ -142,7 +142,7 @@ doubleButtonShownCheckbox.onchange = () => {
 
 const validateCSS = async (cssStylesInText) => {
     const encodedStyles = encodeURI(cssStylesInText)
-    const cssValidationResponse = await fetch(`http://jigsaw.w3.org/css-validator/validator?profile=css3&text=${encodedStyles}`);
+    const cssValidationResponse = await fetch(`https://jigsaw.w3.org/css-validator/validator?profile=css3&text=${encodedStyles}`);
     const cssValidationResponseText = await cssValidationResponse.text();
     const parser = new DOMParser();
     const validationDoc = parser.parseFromString(cssValidationResponseText, "text/html")
