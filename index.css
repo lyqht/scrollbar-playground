@@ -1,35 +1,35 @@
-#fake-window::-webkit-scrollbar {
+#preview::-webkit-scrollbar {
     width: var(--scrollbar-width, 20px);
     height: var(--scrollbar-height, 20px);
 }
 
-#fake-window::-webkit-scrollbar-thumb {
+#preview::-webkit-scrollbar-thumb {
     background: var(--scrollbar-thumb-color, #3B82F6);
     border: var(--scrollbar-border-thickness, 3px) solid var(--scrollbar-border-color, rgb(255, 255, 255));
     border-radius: var(--scrollbar-border-radius, 4px);
 }
 
-#fake-window::-webkit-scrollbar-track {
+#preview::-webkit-scrollbar-track {
     background: var(--scrollbar-track-color, #A1A1AA);
 }
 
-#fake-window::-webkit-scrollbar-button {
+#preview::-webkit-scrollbar-button {
     background: var(--scrollbar-button-color, #3F3F46);
     border: var(--scrollbar-border-thickness, 3px) solid var(--scrollbar-border-color, rgb(255, 255, 255));
     border-radius: var(--scrollbar-border-radius, 4px);
 }
 
-#fake-window::-webkit-scrollbar-corner {
+#preview::-webkit-scrollbar-corner {
     background: var(--scrollbar-corner-color, #FFFFFF);
     border: var(--scrollbar-border-thickness, 3px) solid var(--scrollbar-border-color, rgb(255, 255, 255));
     border-radius: var(--scrollbar-border-radius, 4px);
 }
 
 
-#fake-window::-webkit-scrollbar-button:vertical:start:increment,
-#fake-window::-webkit-scrollbar-button:vertical:end:decrement,
-#fake-window::-webkit-scrollbar-button:horizontal:start:increment,
-#fake-window::-webkit-scrollbar-button:horizontal:end:decrement {
+#preview::-webkit-scrollbar-button:vertical:start:increment,
+#preview::-webkit-scrollbar-button:vertical:end:decrement,
+#preview::-webkit-scrollbar-button:horizontal:start:increment,
+#preview::-webkit-scrollbar-button:horizontal:end:decrement {
     display: var(--show-double-buttons, none);
 }
 
@@ -73,7 +73,7 @@ body,
     border-radius: 50%;
 }
 
-#fake-window {
+#preview {
     margin: auto;
     width: 300px;
     height: 400px;

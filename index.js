@@ -1,4 +1,4 @@
-const scrollbarDiv = document.getElementById("fake-window")
+const scrollbarDiv = document.getElementById("preview")
 const heightInput = document.getElementById("scrollbar-height")
 const widthInput = document.getElementById("scrollbar-width")
 const borderRadiusInput = document.getElementById("scrollbar-border-radius")
@@ -124,7 +124,7 @@ buttonToggle.onchange = () => {
         document.styleSheets[1].deleteRule(indexOfScrollbarButtonRule)
     } else {
         numButtonConfigContainer.style.visibility = 'visible';
-        document.styleSheets[1].insertRule(`#fake-window::-webkit-scrollbar-button {
+        document.styleSheets[1].insertRule(`#preview::-webkit-scrollbar-button {
             background: var(--scrollbar-button-color, #3F3F46);
             border: var(--scrollbar-border-thickness, 3px) solid var(--scrollbar-border-color, rgb(255, 255, 255));
             border-radius: var(--scrollbar-border-radius, 4px);}`)
@@ -151,12 +151,11 @@ const validateCSS = async (cssStylesInText) => {
 
 exportCSSButton.onclick = async () => {
     let customProperties = scrollbarDiv.style.cssText
-    // let customProperties = scrollbarDiv.style.cssText    
     let exportedStyle = `${defaultElementForStyling} { ${customProperties} } `
     const cssRules = Object.values(document.styleSheets[1].cssRules) // Google font styles were loaded first before index.css
     const scrollbarRules = cssRules.filter(rule => rule.cssText.includes('::-webkit-scrollbar'))
     scrollbarRules.forEach(rule => {
-        const modifiedRule = rule.cssText.replace("#fake-window", defaultElementForStyling)
+        const modifiedRule = rule.cssText.replace("#preview", defaultElementForStyling)
         exportedStyle += modifiedRule
     });
 
