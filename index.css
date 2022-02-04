@@ -146,6 +146,7 @@ button#color-picker {
 }
 
 #export-button-container {
+    position: relative;
     display: grid;
     place-items: center;
     margin: 16px;
@@ -154,6 +155,14 @@ button#color-picker {
 #export-button-container>button {
     padding: 12px;
     border-radius: 8px;
+}
+
+#export-css-hint {
+    opacity: 0;
+    color: skyblue;
+    left: 60%;
+    position: absolute;
+    transition: 0.3s;
 }
 
 /* toggle styles */
@@ -246,3 +255,4 @@ input[type="radio"]:focus {
 input[type="radio"]:checked {
     background-color: #ffffff;
 }
+

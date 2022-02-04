@@ -8,6 +8,7 @@ const numButtonConfigContainer = document.getElementById("num-buttons-shown-cont
 const singleButtonShownCheckbox = document.getElementById('button-show-single')
 const doubleButtonShownCheckbox = document.getElementById('button-show-double')
 const exportCSSButton = document.getElementById('export-css')
+const exportCSSHint = document.getElementById('export-css-hint')
 
 let defaultElementForStyling = "body" // modify this for scrollbar styles to be applied to another element
 
@@ -163,6 +164,11 @@ exportCSSButton.onclick = async () => {
     if (Object.keys(cssValidationErrorsCollection).length === 0) {
         console.log("No CSS validation errors found by W3C")
         navigator.clipboard.writeText(exportedStyle)
+        exportCSSHint.textContent = 'Copied'
+        exportCSSHint.style.opacity = 1;
+        setTimeout(() => {
+            exportCSSHint.style.opacity = 0;
+        }, 1500)
     } else {
         console.log({cssValidationErrorsCollection})
     }
