@@ -1,3 +1,7 @@
+import("https://cdn.skypack.dev/copy-to-clipboard").then(
+  (a) => (navigator.clipboard.writeText = a.default)
+); // this is only required for users to be able to get the exported styles from the iframes in the article. If you are at the codepen or the main scrollbar playground, this is not necessary
+
 const scrollbarDiv = document.getElementById("preview")
 const heightInput = document.getElementById("scrollbar-height")
 const widthInput = document.getElementById("scrollbar-width")
