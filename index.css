@@ -103,11 +103,16 @@ body {
 }
 
 #form-container {
+    margin: 12px;
     width: 50%;
     min-width: 30%;
     display: flex;
     align-items: center;
     justify-items: center;
+}
+
+.grid-two-columns {
+    margin: 12px;
 }
 
 #size-inputs>div,
