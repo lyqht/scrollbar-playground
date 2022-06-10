@@ -4,6 +4,9 @@ This project is created for you to learn about different parts of the scrollbar 
 
 <img width="1516" alt="Screenshot 2021-12-29 at 9 40 00 PM" src="https://user-images.githubusercontent.com/35736525/147668152-22987733-83e8-4464-a4dd-ddfbff9c01ce.png">
 
+**Relevant Resources**
+- [Make your website stand out with a custom scrollbar](https://blog.esteetey.dev/make-your-website-stand-out-with-a-custom-scrollbar): Learn more about scrollbar styling 
+- [How to create a CSS Playground in vanilla JavaScript](https://blog.esteetey.dev/how-to-create-a-css-playground-for-styling-pseudo-elements-with-vanilla-javascript): Learn more about how this project is created
 
 ## Features
 
