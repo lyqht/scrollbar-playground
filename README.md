@@ -6,7 +6,7 @@ This project is created for you to learn about different parts of the scrollbar 
 
 **Relevant Resources**
 - [Make your website stand out with a custom scrollbar](https://blog.esteetey.dev/make-your-website-stand-out-with-a-custom-scrollbar): Learn more about scrollbar styling 
-- [How to create a CSS Playground in vanilla JavaScript](https://blog.esteetey.dev/how-to-create-a-css-playground-for-styling-pseudo-elements-with-vanilla-javascript): Learn more about how this project is created
+- [How to create a CSS Playground in vanilla JavaScript](https://blog.esteetey.dev/how-to-create-a-css-playground-for-styling-pseudo-elements-with-vanilla-javascript): Learn more about how this project is created and how you can create your own CSS Playground in vanilla JavaScript.
 
 ## Features
 
@@ -14,7 +14,6 @@ This project is created for you to learn about different parts of the scrollbar 
 
 This scrollbar playground offers you multiple configuration settings such as sizes and colors of the various components of the scrollbar. What you configure directly changes the properties of the pseudo-elements for styling the scrollbar.
 
-An article is written here for a further explanation on [the CSS pseudo-elements used for styling the scrollbar](https://esteetey.dev/make-your-website-stand-out-with-a-custom-scrollbar). 
 ### ✨ Export css button
 
 When you click it, you can get the exported css in your clipboard which you can paste (Ctrl+V) into your project. Feel free to try it out at an empty codepen with a very tall empty div. Now you have your own custom scrollbar!
