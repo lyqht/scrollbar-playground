@@ -58,6 +58,10 @@ h1 {
     margin: 12px;
 }
 
+body {
+    height: 100vh;
+}
+
 body,
 .flex-row {
     display: flex;
@@ -66,6 +70,16 @@ body,
     padding: 24px;
     color: white;
     height: 100%;
+}
+
+footer {
+    position: absolute;
+    bottom: 24px;
+    right: 16px;
+}
+
+a {
+    color: #2196F3;
 }
 
 #github-logo {
@@ -90,10 +104,6 @@ body,
 .inner-content {
     width: 150%;
     transform: translate(20%);
-}
-
-body {
-    height: 100vh;
 }
 
 #form {
