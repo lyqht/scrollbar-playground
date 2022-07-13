@@ -2,7 +2,7 @@
 
 This project is created for you to learn about different parts of the scrollbar that you can change to alter its appearance. Go to the [website](https://lyqht.github.io/scrollbar-playground/) and play with it 🧡
 
-<img width="1516" alt="Screenshot 2021-12-29 at 9 40 00 PM" src="https://user-images.githubusercontent.com/35736525/147668152-22987733-83e8-4464-a4dd-ddfbff9c01ce.png">
+![Scrollbar Playground website preview with size, toggles and color settings](screenshots/v1.0.2.png)
 
 **Relevant Resources**
 - [Make your website stand out with a custom scrollbar](https://blog.esteetey.dev/make-your-website-stand-out-with-a-custom-scrollbar): Learn more about scrollbar styling 
@@ -20,11 +20,7 @@ When you click it, you can get the exported css in your clipboard which you can 
 
 > :warning: Remember to format the code to get a prettified version for readibility. This export button does not prettify the code by default.
 
-## Example
-
-![](screenshots/v1.0.1%20scrollbar%20playground.png)
-
-Your exported styles after prettifying
+## Example of exported styles
 
 ```css
 body {
