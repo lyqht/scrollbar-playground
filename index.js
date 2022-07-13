@@ -150,11 +150,11 @@ const validateCSS = async (cssStylesInText) => {
     const cssValidationResponseText = await cssValidationResponse.text();
     const parser = new DOMParser();
     const validationDoc = parser.parseFromString(cssValidationResponseText, "text/html")
-    const validationErrors = validationDoc.getElementsByClassName("error");
-    return validationErrors;
+    return validationDoc.getElementsByClassName("error");
 }
 
 exportCSSButton.onclick = async () => {
+    exportCSSButton.innerText = 'Exporting...' 
     let customProperties = scrollbarDiv.style.cssText
     let exportedStyle = `${defaultElementForStyling} { ${customProperties} } `
     const cssRules = Object.values(document.styleSheets[1].cssRules) // Google font styles were loaded first before index.css
@@ -168,12 +168,14 @@ exportCSSButton.onclick = async () => {
     if (Object.keys(cssValidationErrorsCollection).length === 0) {
         console.log("No CSS validation errors found by W3C")
         navigator.clipboard.writeText(exportedStyle)
-        exportCSSHint.textContent = 'Copied'
+        exportCSSHint.textContent = 'Copied to your clipboard'
         exportCSSHint.style.opacity = 1;
         setTimeout(() => {
             exportCSSHint.style.opacity = 0;
         }, 1500)
     } else {
+        window.alert(JSON.stringify(cssValidationErrorsCollection));
         console.log({cssValidationErrorsCollection})
     }
+    exportCSSButton.innerText = 'Export CSS'
 }
