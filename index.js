@@ -15,6 +15,9 @@ const singleButtonShownCheckbox = document.getElementById("button-show-single");
 const doubleButtonShownCheckbox = document.getElementById("button-show-double");
 const exportCSSButton = document.getElementById("export-css");
 const exportCSSHint = document.getElementById("export-css-hint");
+const thumbBoxShadowInput = document.getElementById(
+	"scrollbar-thumb-box-shadow",
+);
 
 const prettifyCSS = (css) => {
 	css = css.replace(/\s*{\s*/g, " {\n");
@@ -139,6 +142,13 @@ const sizePropertyArray = [
 sizePropertyArray.forEach(({ el, property }) =>
 	setSizeFieldOnChange(el, property),
 );
+
+thumbBoxShadowInput.oninput = () => {
+	scrollbarDiv.style.setProperty(
+		"--scrollbar-thumb-box-shadow",
+		thumbBoxShadowInput.value,
+	);
+};
 
 borderToggle.onchange = () => {
 	if (borderToggle.checked === false) {

@@ -7,6 +7,7 @@
     background: var(--scrollbar-thumb-color, #3B82F6);
     border: var(--scrollbar-border-thickness, 3px) solid var(--scrollbar-border-color, rgb(255, 255, 255));
     border-radius: var(--scrollbar-border-radius, 4px);
+    box-shadow: var(--scrollbar-thumb-box-shadow, none);
 }
 
 #preview::-webkit-scrollbar-track {

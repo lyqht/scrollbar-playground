@@ -12,7 +12,7 @@ This project is created for you to learn about different parts of the scrollbar 
 
 ### ✨ Create your custom scrollbar
 
-This scrollbar playground offers you multiple configuration settings such as sizes and colors of the various components of the scrollbar. What you configure directly changes the properties of the pseudo-elements for styling the scrollbar.
+This scrollbar playground offers you multiple configuration settings such as sizes, colors and box shadows of the various components of the scrollbar. What you configure directly changes the properties of the pseudo-elements for styling the scrollbar.
 
 ### ✨ Export css button
 
@@ -30,6 +30,7 @@ body {
     --scrollbar-button-color: #404056;
     --scrollbar-corner-color: #D35B5B;
     --scrollbar-border-color: #5C5C5C;
+    --scrollbar-thumb-box-shadow: none;
 }
 
 body::-webkit-scrollbar {
@@ -41,6 +42,7 @@ body::-webkit-scrollbar-thumb {
     background: var(--scrollbar-thumb-color, #3B82F6);
     border: 3px solid var(--scrollbar-border-color, rgb(255, 255, 255));
     border-radius: var(--scrollbar-border-radius, 4px);
+    box-shadow: var(--scrollbar-thumb-box-shadow, none);
 }
 
 body::-webkit-scrollbar-track {
