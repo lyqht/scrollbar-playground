@@ -16,9 +16,7 @@ This scrollbar playground offers you multiple configuration settings such as siz
 
 ### ✨ Export css button
 
-When you click it, you can get the exported css in your clipboard which you can paste (Ctrl+V) into your project. Feel free to try it out at an empty codepen with a very tall empty div. Now you have your own custom scrollbar!
-
-> :warning: Remember to format the code to get a prettified version for readibility. This export button does not prettify the code by default.
+When you click it, you can get the exported css in your clipboard which you can paste (Ctrl+V) into your project. The exported code is automatically prettified for easier reading. Feel free to try it out at an empty codepen with a very tall empty div. Now you have your own custom scrollbar!
 
 ## Example of exported styles
 
