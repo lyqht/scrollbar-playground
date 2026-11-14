@@ -18,6 +18,10 @@ const exportCSSHint = document.getElementById("export-css-hint");
 const thumbBoxShadowInput = document.getElementById(
 	"scrollbar-thumb-box-shadow",
 );
+const standardWidthSelect = document.getElementById("scrollbar-standard-width");
+const standardPreviewToggle = document.getElementById(
+	"scrollbar-standard-preview-toggle",
+);
 
 const prettifyCSS = (css) => {
 	css = css.replace(/\s*{\s*/g, " {\n");
@@ -150,6 +154,20 @@ thumbBoxShadowInput.oninput = () => {
 	);
 };
 
+standardWidthSelect.onchange = () => {
+	scrollbarDiv.style.setProperty(
+		"--scrollbar-standard-width",
+		standardWidthSelect.value,
+	);
+};
+
+standardPreviewToggle.onchange = () => {
+	scrollbarDiv.classList.toggle(
+		"standard-preview",
+		standardPreviewToggle.checked,
+	);
+};
+
 borderToggle.onchange = () => {
 	if (borderToggle.checked === false) {
 		scrollbarDiv.style.setProperty("--scrollbar-border-thickness", "0px");
@@ -199,34 +217,57 @@ const validateCSS = async (cssStylesInText) => {
 	return validationDoc.getElementsByClassName("error");
 };
 
-exportCSSButton.onclick = async () => {
-	exportCSSButton.innerText = "Exporting...";
-	let customProperties = scrollbarDiv.style.cssText;
+// Standard properties for browsers without ::-webkit-scrollbar (e.g. Firefox).
+// They are wrapped in @supports because a non-auto scrollbar-color makes Chrome, Edge
+// and Safari ignore the ::-webkit-scrollbar rules, which would throw away the detailed styles.
+const buildStandardFallback = (selector) =>
+	`@supports not selector(::-webkit-scrollbar) { ${selector} { ` +
+	`scrollbar-color: var(--scrollbar-thumb-color, #3B82F6) var(--scrollbar-track-color, #A1A1AA); ` +
+	`scrollbar-width: var(--scrollbar-standard-width, thin); } } `;
+
+const buildExportedStyle = () => {
+	const customProperties = scrollbarDiv.style.cssText;
 	let exportedStyle = `${defaultElementForStyling} { ${customProperties} } `;
+	exportedStyle += buildStandardFallback(defaultElementForStyling);
 	const cssRules = Object.values(document.styleSheets[1].cssRules); // Google font styles were loaded first before index.css
 	const scrollbarRules = cssRules.filter((rule) =>
 		rule.cssText.includes("::-webkit-scrollbar"),
 	);
 	scrollbarRules.forEach((rule) => {
-		const modifiedRule = rule.cssText.replace(
+		// replaceAll: some rules list #preview more than once (e.g. the button rules)
+		exportedStyle += rule.cssText.replaceAll(
 			"#preview",
 			defaultElementForStyling,
 		);
-		exportedStyle += modifiedRule;
 	});
+	return exportedStyle;
+};
 
-	const cssValidationErrorsCollection = await validateCSS(exportedStyle);
-	if (Object.keys(cssValidationErrorsCollection).length === 0) {
-		console.log("No CSS validation errors found by W3C");
-		navigator.clipboard.writeText(prettifyCSS(exportedStyle));
-		exportCSSHint.textContent = "Copied to your clipboard";
-		exportCSSHint.style.opacity = 1;
-		setTimeout(() => {
-			exportCSSHint.style.opacity = 0;
-		}, 1500);
-	} else {
-		window.alert(JSON.stringify(cssValidationErrorsCollection));
-		console.log({ cssValidationErrorsCollection });
-	}
+const showExportHint = (message) => {
+	exportCSSHint.textContent = message;
+	exportCSSHint.style.opacity = 1;
+	setTimeout(() => {
+		exportCSSHint.style.opacity = 0;
+	}, 1500);
+};
+
+exportCSSButton.onclick = async () => {
+	exportCSSButton.innerText = "Exporting...";
+	const exportedStyle = buildExportedStyle();
+	await navigator.clipboard.writeText(prettifyCSS(exportedStyle));
+	showExportHint("Copied to your clipboard");
 	exportCSSButton.innerText = "Export CSS";
+
+	// The W3C check is informational only: it can lag behind newer CSS
+	// such as @supports selector() and scrollbar-color, and it can be unreachable.
+	try {
+		const cssValidationErrorsCollection = await validateCSS(exportedStyle);
+		if (cssValidationErrorsCollection.length > 0) {
+			console.log({ cssValidationErrorsCollection });
+		} else {
+			console.log("No CSS validation errors found by W3C");
+		}
+	} catch (error) {
+		console.log("Skipped W3C CSS validation", error);
+	}
 };

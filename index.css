@@ -35,6 +35,14 @@
 }
 
 
+/* Standard properties (CSS Scrollbars Styling Module Level 1).
+   Only applied while "Preview standard only" is on, because a non-auto scrollbar-color
+   makes browsers ignore the ::-webkit-scrollbar rules above. */
+#preview.standard-preview {
+    scrollbar-color: var(--scrollbar-thumb-color, #3B82F6) var(--scrollbar-track-color, #A1A1AA);
+    scrollbar-width: var(--scrollbar-standard-width, thin);
+}
+
 /* styles not related to scrollbar */
 
 h1 {
@@ -74,9 +82,8 @@ body,
 }
 
 footer {
-    position: absolute;
-    bottom: 24px;
-    right: 16px;
+    margin: 8px 16px 24px;
+    text-align: right;
 }
 
 a {
@@ -272,3 +279,23 @@ input[type="radio"]:checked {
     background-color: #ffffff;
 }
 
+
+/* standard properties section */
+
+select {
+    padding: 8px;
+    font-size: 16px;
+    font-family: inherit;
+}
+
+.hint {
+    max-width: 80ch;
+    margin: 4px 16px;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #d4d4d8;
+}
+
+.hint code {
+    color: #93c5fd;
+}
