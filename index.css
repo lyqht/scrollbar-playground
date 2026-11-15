@@ -298,6 +298,12 @@ input[type="radio"]:checked {
 }
 
 
+#box-shadow-input input {
+    width: min(16ch, 100%);
+    font-family: inherit;
+    font-size: 16px;
+}
+
 /* standard properties section */
 
 select {
@@ -318,19 +324,13 @@ select {
     color: #93c5fd;
 }
 
-/* narrow screens (and the iframe in the blog post): preview on top, controls below */
+/* tablets and the iframe in the blog post: still side by side, just more compact */
 
 @media (max-width: 800px) {
     body {
-        grid-template-columns: minmax(0, 1fr);
-        grid-template-rows: auto minmax(0, 1fr);
         padding: 12px;
         gap: 12px;
-    }
-
-    #preview {
-        width: min(300px, 100%);
-        height: min(260px, 35dvh);
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr);
     }
 
     h2 {
@@ -345,5 +345,19 @@ select {
 
     h1::before {
         display: none;
+    }
+}
+
+/* phones: too narrow for two columns, so the preview goes on top */
+
+@media (max-width: 600px) {
+    body {
+        grid-template-columns: minmax(0, 1fr);
+        grid-template-rows: auto minmax(0, 1fr);
+    }
+
+    #preview {
+        width: min(300px, 100%);
+        height: min(260px, 35dvh);
     }
 }
