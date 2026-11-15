@@ -184,15 +184,39 @@
                 <label for="scrollbar-thumb-box-shadow">Thumb Box Shadow</label>
                 <input id="scrollbar-thumb-box-shadow" name="scrollbar-thumb-box-shadow" type="text" placeholder="0 0 5px #000" />
             </div>
+            <h2>Standard properties</h2>
+            <div id="standard-inputs" class="grid-two-columns">
+                <div class="grid-two-columns">
+                    <label for="scrollbar-standard-width">scrollbar-width</label>
+                    <select id="scrollbar-standard-width" name="scrollbar-standard-width">
+                        <option value="auto">auto</option>
+                        <option value="thin" selected>thin</option>
+                        <option value="none">none</option>
+                    </select>
+                </div>
+                <div class="grid-two-columns">
+                    <label for="scrollbar-standard-preview-toggle">Preview standard only</label>
+                    <label class="switch" for="scrollbar-standard-preview-toggle">
+                        <input id="scrollbar-standard-preview-toggle" name="scrollbar-standard-preview-toggle"
+                            type="checkbox">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+            </div>
+            <p id="standard-hint" class="hint">
+                The standard properties set only two colors and a size, and they switch off
+                <code>::-webkit-scrollbar</code> styles wherever they apply. Export adds them only for browsers without
+                <code>::-webkit-scrollbar</code>, like Firefox. Preview to see what those visitors get.
+            </p>
             <div id="export-button-container">
                 <button id='export-css'>Export CSS</button>
                 <p id='export-css-hint'></p>
             </div>
+            <footer>
+                A project by <a href="https://github.com/lyqht/">Estee Tey</a> © 2022 · Updated Nov 2026
+            </footer>
         </div>
-    </main>
-    <footer>
-        A project by <a href="https://github.com/lyqht/">Estee Tey</a> © 2022
-    </footer>
+    </div>
     <script src="index.js"></script>
 </body>
 </html>
