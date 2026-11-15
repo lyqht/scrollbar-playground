@@ -14,6 +14,10 @@ This project is created for you to learn about different parts of the scrollbar 
 
 This scrollbar playground offers you multiple configuration settings such as sizes, colors and box shadows of the various components of the scrollbar. What you configure directly changes the properties of the pseudo-elements for styling the scrollbar.
 
+### ✨ Fits any screen
+
+The whole playground fits within the browser window, so the preview never scrolls out of view while you change settings. When the controls don't fit, only the controls panel scrolls. The preview and the controls sit side by side on screens wider than 600px, including when the playground is embedded in a blog post, and stack with the preview on top on phones.
+
 ### ✨ Compare with the standard properties
 
 `scrollbar-color` and `scrollbar-width` are the standard way to style scrollbars and work in all modern browsers, including Firefox, which never supported `::-webkit-scrollbar`. They only set two colors and a size, though, and an element with a `scrollbar-color` other than `auto` has its `::-webkit-scrollbar` styles ignored.
@@ -61,5 +65,5 @@ body::-webkit-scrollbar-track {
 
 ## Changelog
 
-- **Nov 2026**: Added the standard `scrollbar-color` / `scrollbar-width` properties, with a preview toggle and a Firefox fallback in the exported CSS. Export no longer blocks on the W3C validator, and multi-selector rules now export with the right selector.
+- **Nov 2026**: Added the standard `scrollbar-color` / `scrollbar-width` properties, with a preview toggle and a Firefox fallback in the exported CSS. Export no longer blocks on the W3C validator, and multi-selector rules now export with the right selector. The layout now fits within the viewport at every screen size (side by side above 600px, stacked on phones), the footer no longer covers the inputs, and the Box Shadow input is wide enough for its placeholder.
 - **Jun 2025**: Added thumb box shadow.
